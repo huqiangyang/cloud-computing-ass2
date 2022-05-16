@@ -10,13 +10,13 @@ Zheng Xu 1291694
 
 ### Directory:
 
-ass2: whole project
-ansible: ansible scripts including twitter harvester and frontend project
-analyze: Mapreduce and data analyze
-aurin: data from Aurin
+ass2: whole project \n
+ansible: ansible scripts including twitter harvester and frontend project \n
+analyze: Mapreduce and data analyze \n
+aurin: data from Aurin \n
 
 ### Youtube link:
 
-Automation: https://www.youtube.com/watch?v=B1ChjvuCHz4
-MRC: https://www.youtube.com/watch?v=CKRkHQhiY-A
-Website: https://www.youtube.com/watch?v=NekWJSO20P0
+Automation: https://www.youtube.com/watch?v=B1ChjvuCHz4 \n
+MRC: https://www.youtube.com/watch?v=CKRkHQhiY-A \n 
+Website: https://www.youtube.com/watch?v=NekWJSO20P0 \n
