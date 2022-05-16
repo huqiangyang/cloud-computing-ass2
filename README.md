@@ -20,3 +20,7 @@ aurin: data from Aurin
 Automation: https://www.youtube.com/watch?v=B1ChjvuCHz4  
 MRC: https://www.youtube.com/watch?v=CKRkHQhiY-A  
 Website: https://www.youtube.com/watch?v=NekWJSO20P0  
+
+### Website address:
+
+172.26.131.60
