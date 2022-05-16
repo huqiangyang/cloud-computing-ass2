@@ -1,0 +1,40 @@
+#
+#Team:15
+#Yuqi Cao 1186642
+#Yaxuan Huang 1118801
+#Meng Yang 1193990
+#Gangdan Shu 1239032
+#Zheng Xu 1291694
+#
+---
+- name: Gather facts of remote host
+  setup:
+    gather_subset: all
+    
+- name: Install dependencies
+  tags: always
+  become: yes
+  apt:
+    name: ['apt-transport-https', 'build-essential', 'ca-certificates', 'curl', 'git', 'python3-dev', 'python3-pip', 'python3-setuptools', 'software-properties-common', 'unzip', 'vim', 'net-tools']
+    state: latest
+    install_recommends: no
+    update_cache: yes
+
+# - name: Install pip dependencies
+#   tags: always
+#   become: yes
+#   pip:
+#     name: ['distribute']
+
+- name: Update pip
+  tags: always
+  become: yes
+  pip:
+    name: ['pip']
+    state: latest
+
+- name: Install python dependencies
+  tags: always
+  become: yes
+  pip:
+    name: ['tweepy==3.9.0', 'couchdb']

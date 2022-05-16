@@ -1,0 +1,61 @@
+#
+#Team:15
+#Yuqi Cao 1186642
+#Yaxuan Huang 1118801
+#Meng Yang 1193990
+#Gangdan Shu 1239032
+#Zheng Xu 1291694
+#
+# Common vars
+availability_zone: QRIScloud
+instance_image: 356ff1ed-5960-4ac2-96a1-0c0198e6a999
+instance_key_name: group15-key
+instance_flavor: m3.xsmall
+
+
+# Security group
+security_groups:
+  - name: ssh_group55
+    description: "Security group for SSH access"
+    protocol: tcp
+    port_range_min: 22
+    port_range_max: 22
+    remote_ip_prefix: 0.0.0.0/0
+  - name: http_group55
+    description: "Security group for HTTP"
+    protocol: tcp
+    port_range_min: 80
+    port_range_max: 80
+    remote_ip_prefix: 0.0.0.0/0
+  - name: fauxton_ui
+    description: "Security group for couch DB fauxton UI access"
+    protocol: tcp
+    port_range_min: 5984
+    port_range_max: 5984
+    remote_ip_prefix: 0.0.0.0/0
+  - name: couchdb
+    description: "Couchdb"
+    protocol: tcp
+    port_range_min: 4369
+    port_range_max: 4369
+    remote_ip_prefix: 0.0.0.0/0
+  - name: couchdb_cluster
+    description: "couchdb cluster"
+    protocol: tcp
+    port_range_min: 9100
+    port_range_max: 9200
+    remote_ip_prefix: 0.0.0.0/0
+  - name: nginx
+    description: "Security group for nginx access"
+    protocol: tcp
+    port_range_min: 10000
+    port_range_max: 10000
+    remote_ip_prefix: 0.0.0.0/0
+
+# Instance
+instances:
+  - name: in-1
+  - name: in-2
+  - name: in-3
+  - name: in-4
+

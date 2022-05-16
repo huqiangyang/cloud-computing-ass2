@@ -1,0 +1,20 @@
+#
+#Team:15
+#Yuqi Cao 1186642
+#Yaxuan Huang 1118801
+#Meng Yang 1193990
+#Gangdan Shu 1239032
+#Zheng Xu 1291694
+#
+---
+# Create volume snapshot(s) (for demo only, you don't need this unless you want to)
+- name: Create volume snapshot(s)
+  openstack.cloud.volume_snapshot:
+    state: present
+    volume: '{{ item.vol_name }}'
+    display_name: "{{ item.vol_name }}-{{ lookup('pipe', 'date +%Y-%m-%d-%H-%M-%S') }}"
+    wait: yes
+    timeout: 600
+    force: yes
+    availability_zone: '{{ availability_zone }}'
+  loop: '{{ volumes }}'

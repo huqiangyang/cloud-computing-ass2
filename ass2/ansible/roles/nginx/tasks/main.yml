@@ -1,0 +1,30 @@
+#
+#Team:15
+#Yuqi Cao 1186642
+#Yaxuan Huang 1118801
+#Meng Yang 1193990
+#Gangdan Shu 1239032
+#Zheng Xu 1291694
+#
+---
+- name: Install nginx
+  become: yes
+  shell: "apt-get install nginx -y"
+
+- name: Copy nginx config file
+  become: yes
+  copy:
+    src: default
+    dest: /etc/nginx/sites-enabled/default
+    mode: '0644'
+
+- name: Restart nginx
+  become: yes
+  shell: "systemctl restart nginx"
+
+- name: Copy website file
+  become: yes
+  copy:
+    src: web
+    dest: /var/www/html/
+    mode: '0755'

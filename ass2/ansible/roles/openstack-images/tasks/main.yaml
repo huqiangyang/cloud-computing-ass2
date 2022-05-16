@@ -1,0 +1,25 @@
+#
+#Team:15
+#Yuqi Cao 1186642
+#Yaxuan Huang 1118801
+#Meng Yang 1193990
+#Gangdan Shu 1239032
+#Zheng Xu 1291694
+#
+---
+# Show all available Openstack images (just for demo, you don't need this task to create instance) 
+- name: Retrieve all available Openstack images
+  become: yes
+  openstack.cloud.image_info:
+  register: image_result
+
+- name: Get image names and Ids
+  ansible.builtin.set_fact:
+    image_facts: "{{ image_facts|default([]) + [ {'name': item.name, 'id': item.id} ] }}"
+  loop: '{{ image_result.openstack_image }}'
+  when: item.name is defined
+
+- name: Show images
+  ansible.builtin.debug:
+    msg: "Image name: {{ item.name }}; Image id: {{ item.id }}"
+  loop: '{{ image_facts }}'

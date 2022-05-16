@@ -1,0 +1,32 @@
+#
+#Team:15
+#Yuqi Cao 1186642
+#Yaxuan Huang 1118801
+#Meng Yang 1193990
+#Gangdan Shu 1239032
+#Zheng Xu 1291694
+#
+---
+- hosts: localhost 
+  vars_files:
+    - host_vars/nectar.yaml
+  gather_facts: true
+
+  roles:
+    - role: openstack-common
+    - role: openstack-images
+    # - role: openstack-volume
+    - role: openstack-security-group
+    - role: openstack-instance
+    # - role: openstack-volume-snapshot
+
+
+- hosts: COMP90024
+  remote_user: ubuntu
+
+  roles:
+    - dependencies
+    - docker
+    - nginx
+    - couchdb
+    - harvester
